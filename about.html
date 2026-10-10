@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>A Window into Australia — About</title><link rel="stylesheet" href="style.css"></head><body>
+<header class="site-header">
+
+    <nav class="nav container">
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+            A WINDOW INTO AUSTRALIA
+        </a>
+
+
+        <!-- Desktop navigation -->
+
+        <div class="nav-links">
+
+            <a
+                class="active"
+                href="index.html"
+            >
+                Home
+            </a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                class="search-link"
+                href="search.html"
+                data-open-search
+                aria-label="Open search"
+            >
+                ⌕
+            </a>
+
+        </div>
+
+
+        <!-- Mobile hamburger -->
+
+        <details class="mobile-menu">
+
+            <summary
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </summary>
+
+
+            <div class="mobile-menu-panel">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="explore.html">
+                    Explore
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="search.html">
+                    Search
+                </a>
+
+            </div>
+
+        </details>
+
+    </nav>
+
+</header>
+<main><section class="about-hero"><div class="container"><h1>A Window into Australia</h1><p>Explore the stories behind Australia's audiovisual history.</p></div></section>
+<section class="about-content"><div class="eyebrow">About the project</div><h2>Explore the stories behind Australia</h2><p>A Window into Australia is a simple archive exploration interface designed to help people discover Australia's audiovisual history through time, people and places.</p><p>The experience prioritises curiosity rather than requiring users to know exactly what they are looking for. Users can browse by era or medium, search the archive, open detailed items, and discover unexpected material through Surprise Me.</p>
+<div class="about-grid"><article class="about-card"><h3>The collection</h3><p class="section-intro">A browsable view of archival film, audio, images and documentary material.</p></article><article class="about-card"><h3>How to explore</h3><p class="section-intro">Search directly or follow paths through eras, media and related items.</p></article><article class="about-card"><h3>Surprise Me</h3><p class="section-intro">A serendipitous route for discovering something unexpected.</p></article></div>
+</section></main><footer class="site-footer"><div class="container">A WINDOW INTO AUSTRALIA · Explore · Discover · Wander</div></footer><div class="search-overlay" id="searchOverlay" aria-hidden="true">
+<button class="search-overlay-close" type="button" data-close-search aria-label="Close search">×</button>
+<div class="search-overlay-panel"><div class="eyebrow">Archive search</div>
+<h2>What would you like to discover?</h2><p>Search stories, recordings, photographs and films from the collection.</p>
+<form class="overlay-search-form" data-search-form><label class="sr-only" for="overlaySearchInput">Search the archive</label>
+<input id="overlaySearchInput" type="search" placeholder="Search the archive..." autocomplete="off"><button class="btn btn-primary" type="submit">Search</button></form>
+<div class="search-suggestions"><span>Try:</span><button type="button" onclick="document.getElementById('overlaySearchInput').value='Australian music'">Australian music</button><button type="button" onclick="document.getElementById('overlaySearchInput').value='coast'">coast</button><button type="button" onclick="document.getElementById('overlaySearchInput').value='voices'">voices</button></div>
+</div></div><script src="api-config.js"></script><script src="javascript.js"></script></body></html>

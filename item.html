@@ -1,0 +1,230 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>A Window into Australia — Item detail</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body data-page="item">
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="nav container">
+
+            <!-- Logo / Brand -->
+            <a
+                class="brand"
+                href="index.html"
+            >
+                A WINDOW INTO AUSTRALIA
+            </a>
+
+
+            <!-- Desktop Navigation -->
+            <div class="nav-links">
+
+                <a
+                    href="index.html"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="explore.html"
+                >
+                    Explore
+                </a>
+
+                <a
+                    href="about.html"
+                >
+                    About
+                </a>
+
+                <a
+                    class="search-link"
+                    href="search.html"
+                    data-open-search
+                    aria-label="Open search"
+                >
+                    ⌕
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Navigation -->
+            <details class="mobile-menu">
+
+                <summary
+                    aria-label="Open navigation menu"
+                >
+                    ☰
+                </summary>
+
+                <div class="mobile-menu-panel">
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="explore.html">
+                        Explore
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+                    <a
+                        href="search.html"
+                        data-open-search
+                    >
+                        Search
+                    </a>
+
+                </div>
+
+            </details>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="container">
+
+        <div class="page-title">
+
+            <a
+                class="text-link"
+                href="explore.html"
+            >
+                ← Back to explore
+            </a>
+
+        </div>
+
+
+        <!-- Dynamic NFSA item content -->
+        <div
+            id="itemContent"
+            aria-live="polite"
+        ></div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+            A WINDOW INTO AUSTRALIA
+            · National Film and Sound Archive of Australia
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         SEARCH OVERLAY
+    ========================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay"
+        aria-hidden="true"
+    >
+
+        <button
+            class="search-overlay-close"
+            type="button"
+            data-close-search
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+
+        <div class="search-overlay-panel">
+
+            <div class="eyebrow">
+                Archive search
+            </div>
+
+            <h2>
+                What would you like to discover?
+            </h2>
+
+            <p>
+                Search stories, recordings, photographs
+                and films from the collection.
+            </p>
+
+
+            <form
+                class="overlay-search-form"
+                data-search-form
+            >
+
+                <label
+                    class="sr-only"
+                    for="overlaySearchInput"
+                >
+                    Search the archive
+                </label>
+
+                <input
+                    id="overlaySearchInput"
+                    type="search"
+                    placeholder="Search the archive…"
+                    autocomplete="off"
+                >
+
+                <button
+                    class="btn btn-primary"
+                >
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="api-config.js"></script>
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>

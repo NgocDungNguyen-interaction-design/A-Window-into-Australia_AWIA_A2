@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        A Window into Australia — Explore
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body data-page="explore">
+
+    <!-- ==================== HEADER ==================== -->
+
+    <header class="site-header">
+
+    <nav class="nav container">
+
+        <a
+            class="brand"
+            href="index.html"
+        >
+            A WINDOW INTO AUSTRALIA
+        </a>
+
+
+        <!-- Desktop navigation -->
+
+        <div class="nav-links">
+
+            <a
+                class="active"
+                href="index.html"
+            >
+                Home
+            </a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                class="search-link"
+                href="search.html"
+                data-open-search
+                aria-label="Open search"
+            >
+                ⌕
+            </a>
+
+        </div>
+
+
+        <!-- Mobile hamburger -->
+
+        <details class="mobile-menu">
+
+            <summary
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </summary>
+
+
+            <div class="mobile-menu-panel">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="explore.html">
+                    Explore
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="search.html">
+                    Search
+                </a>
+
+            </div>
+
+        </details>
+
+    </nav>
+
+</header>
+
+
+    <!-- ==================== MAIN ==================== -->
+
+    <main class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <section class="page-title">
+
+            <div class="eyebrow">
+                Archive browser
+            </div>
+
+            <h1>
+                Explore the collection
+            </h1>
+
+            <p class="section-intro">
+                Browse Australia's stories by keyword, year and medium.
+            </p>
+
+        </section>
+
+
+
+        <!-- ==================== SEARCH + FILTERS ==================== -->
+
+        <div class="explore-controls">
+
+
+            <!-- SEARCH -->
+
+            <form
+                class="searchbar"
+                id="exploreSearchForm"
+            >
+
+                <label
+                    class="sr-only"
+                    for="exploreQuery"
+                >
+                    Search the archive
+                </label>
+
+                <input
+                    id="exploreQuery"
+                    type="search"
+                    placeholder="Search the collection…"
+                >
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    Search
+                </button>
+
+            </form>
+
+
+
+            <!-- FILTERS -->
+
+            <div class="filter-row">
+
+
+                <!-- MEDIUM FILTER -->
+
+                <label>
+
+                    Medium
+
+                    <select id="exploreMedium">
+
+                        <option value="">
+                            All media
+                        </option>
+
+                        <option value="Film">
+                            Film
+                        </option>
+
+                        <option value="Audio">
+                            Audio
+                        </option>
+
+                        <option value="Image">
+                            Image
+                        </option>
+
+                        <option value="Television">
+                            Television
+                        </option>
+
+                        <option value="Documentation">
+                            Documentation
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+
+                <!-- YEAR FILTER -->
+
+                <label>
+
+                    Year or range
+
+                    <input
+                        id="exploreYear"
+                        type="text"
+                        placeholder="e.g. 1970 or 1970-1980"
+                    >
+
+                </label>
+
+
+
+                <!-- APPLY FILTERS -->
+
+                <button
+                    class="btn"
+                    id="applyExploreFilters"
+                    type="button"
+                >
+                    Apply filters
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==================== COLLECTION RESULTS ==================== -->
+
+        <div class="section-head">
+
+            <div>
+
+                <h2>
+                    Collection results
+                </h2>
+
+                <p
+                    class="section-intro"
+                    id="exploreCount"
+                    aria-live="polite"
+                >
+                    Loading collection…
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- API RESULTS -->
+
+        <div
+            class="cards"
+            id="exploreResults"
+            aria-live="polite"
+        >
+        </div>
+
+
+
+        <!-- LOAD MORE -->
+
+        <div class="load-more-wrap">
+
+            <button
+                class="btn"
+                id="exploreLoadMore"
+                type="button"
+            >
+                Load more
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==================== FOOTER ==================== -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            A WINDOW INTO AUSTRALIA
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- ==================== SEARCH OVERLAY ==================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay"
+        aria-hidden="true"
+    >
+
+        <button
+            class="search-overlay-close"
+            type="button"
+            data-close-search
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+
+        <div class="search-overlay-panel">
+
+            <div class="eyebrow">
+                Archive search
+            </div>
+
+            <h2>
+                What would you like to discover?
+            </h2>
+
+            <p>
+                Search stories, recordings, photographs and films
+                from the collection.
+            </p>
+
+
+            <form
+                class="overlay-search-form"
+                data-search-form
+            >
+
+                <label
+                    class="sr-only"
+                    for="overlaySearchInput"
+                >
+                    Search the archive
+                </label>
+
+                <input
+                    id="overlaySearchInput"
+                    type="search"
+                    placeholder="Search the archive…"
+                    autocomplete="off"
+                >
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+
+    <script src="api-config.js"></script>
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>

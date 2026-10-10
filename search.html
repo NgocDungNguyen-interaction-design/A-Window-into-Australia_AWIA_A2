@@ -1,0 +1,408 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>
+        A Window into Australia — Search
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body data-page="search">
+
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="nav container">
+
+
+            <!-- Logo -->
+
+            <a
+                class="brand"
+                href="index.html"
+            >
+                A WINDOW INTO AUSTRALIA
+            </a>
+
+
+             <!-- Desktop navigation -->
+
+        <div class="nav-links">
+
+            <a
+                class="active"
+                href="index.html"
+            >
+                Home
+            </a>
+
+            <a href="explore.html">
+                Explore
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a
+                class="search-link"
+                href="search.html"
+                data-open-search
+                aria-label="Open search"
+            >
+                ⌕
+            </a>
+
+        </div>
+
+
+        <!-- Mobile hamburger -->
+
+        <details class="mobile-menu">
+
+            <summary
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </summary>
+
+
+            <div class="mobile-menu-panel">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="explore.html">
+                    Explore
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="search.html">
+                    Search
+                </a>
+
+            </div>
+
+        </details>
+
+    </nav>
+
+</header>
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="container">
+
+
+        <!-- Page title -->
+
+        <section class="page-title">
+
+            <div class="eyebrow">
+                Archive search
+            </div>
+
+
+            <h1 id="resultsTitle">
+                Search results
+            </h1>
+
+
+            <p class="section-intro">
+                Find stories, recordings, photographs
+                and films from the collection.
+            </p>
+
+        </section>
+
+
+        <!-- =========================
+             SEARCH + FILTERS
+        ========================== -->
+
+        <section class="search-panel">
+
+
+            <!-- Search form -->
+
+            <form
+                class="searchbar"
+                id="apiSearchForm"
+            >
+
+                <label
+                    class="sr-only"
+                    for="archiveSearchInput"
+                >
+                    Search the archive
+                </label>
+
+
+                <input
+                    id="archiveSearchInput"
+                    type="search"
+                    placeholder="Search the archive…"
+                    autocomplete="off"
+                >
+
+
+                <button class="btn btn-primary">
+                    Search
+                </button>
+
+            </form>
+
+
+            <!-- Filters -->
+
+            <div class="filter-row">
+
+
+                <!-- Medium -->
+
+                <label>
+
+                    Medium
+
+                    <select id="mediumFilter">
+
+                        <option value="">
+                            All media
+                        </option>
+
+                        <option>
+                            Film
+                        </option>
+
+                        <option>
+                            Audio
+                        </option>
+
+                        <option>
+                            Image
+                        </option>
+
+                        <option>
+                            Television
+                        </option>
+
+                        <option>
+                            Documentation
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <!-- Year -->
+
+                <label>
+
+                    Year or range
+
+                    <input
+                        id="yearFilter"
+                        type="text"
+                        placeholder="e.g. 1970 or 1970-1980"
+                    >
+
+                </label>
+
+
+                <!-- Apply -->
+
+                <button
+                    class="btn"
+                    id="applyFilters"
+                >
+                    Apply filters
+                </button>
+
+
+                <!-- Clear -->
+
+                <button
+                    class="btn"
+                    id="clearFilters"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SEARCH STATUS
+        ========================== -->
+
+        <div
+            class="search-feedback"
+            aria-live="polite"
+        >
+
+            <span>
+                Current search:
+            </span>
+
+            <strong id="liveQuery">
+                Australian collection
+            </strong>
+
+        </div>
+
+
+        <!-- Result count -->
+
+        <p
+            class="section-intro"
+            id="resultsCount"
+        >
+            Loading results…
+        </p>
+
+
+        <!-- =========================
+             RESULTS
+        ========================== -->
+
+        <div
+            class="cards"
+            id="resultsList"
+            aria-live="polite"
+        ></div>
+
+
+        <!-- =========================
+             LOAD MORE
+        ========================== -->
+
+        <div class="load-more-wrap">
+
+            <button
+                class="btn btn-primary"
+                id="loadMore"
+                hidden
+            >
+                Load more
+            </button>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         SEARCH OVERLAY
+    ========================== -->
+
+    <div
+        class="search-overlay"
+        id="searchOverlay"
+        aria-hidden="true"
+    >
+
+
+        <!-- Close button -->
+
+        <button
+            class="search-overlay-close"
+            type="button"
+            data-close-search
+            aria-label="Close search"
+        >
+            ×
+        </button>
+
+
+        <!-- Search overlay panel -->
+
+        <div class="search-overlay-panel">
+
+            <div class="eyebrow">
+                Archive search
+            </div>
+
+
+            <h2>
+                What would you like to discover?
+            </h2>
+
+
+            <p>
+                Search stories, recordings, photographs
+                and films from the collection.
+            </p>
+
+
+            <form
+                class="overlay-search-form"
+                data-search-form
+            >
+
+                <label
+                    class="sr-only"
+                    for="overlaySearchInput"
+                >
+                    Search the archive
+                </label>
+
+
+                <input
+                    id="overlaySearchInput"
+                    type="search"
+                    placeholder="Search the archive…"
+                    autocomplete="off"
+                >
+
+
+                <button class="btn btn-primary">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="api-config.js"></script>
+
+    <script src="javascript.js"></script>
+
+
+</body>
+
+</html>
